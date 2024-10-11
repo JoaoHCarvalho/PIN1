@@ -9,5 +9,4 @@ public class NclubApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(NclubApplication.class, args);
 	}
-
 }
