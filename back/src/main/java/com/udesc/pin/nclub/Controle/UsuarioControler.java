@@ -10,14 +10,15 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 
+
+/*DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;*/
 @RestController
 @RequestMapping("/usuario")
 public class UsuarioControler {
-    private UsuarioRepository usuarioRepository;
 
-    public UsuarioControler(UsuarioRepository usuarioRepository) {
-        this.usuarioRepository = usuarioRepository;
-    }
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @PostMapping("/create")
     public ResponseEntity<Usuario> createUsuario(@Valid @RequestBody Usuario usuario){

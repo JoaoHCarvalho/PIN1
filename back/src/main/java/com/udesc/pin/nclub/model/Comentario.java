@@ -11,6 +11,7 @@ public class Comentario {
     private String mensagem;
 
     @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
     public Integer getCodigo() {

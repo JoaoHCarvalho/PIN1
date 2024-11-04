@@ -10,8 +10,8 @@ public class CarrinhoCompra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
 
-    @OneToMany
-    private List<ItemProduto> itensProduto;
+    @OneToMany(mappedBy = "carrinho")
+    private List<ItemProduto> itens;
 
     public Integer getCodigo() {
         return codigo;
@@ -21,11 +21,11 @@ public class CarrinhoCompra {
         this.codigo = codigo;
     }
 
-    public List<ItemProduto> getItensProduto() {
-        return itensProduto;
+    public List<ItemProduto> getItens() {
+        return itens;
     }
 
-    public void setItensProduto(List<ItemProduto> itensProduto) {
-        this.itensProduto = itensProduto;
+    public void setItens(List<ItemProduto> itens) {
+        this.itens = itens;
     }
 }

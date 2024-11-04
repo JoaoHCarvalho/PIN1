@@ -2,6 +2,8 @@ package com.udesc.pin.nclub.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Categoria {
     @Id
@@ -10,6 +12,17 @@ public class Categoria {
 
     private String descricao;
     private char grupo;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<Produto> produtos;
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
 
     public Integer getCodigo() {
         return codigo;

@@ -18,6 +18,17 @@ public class Promocao {
 
     private float percentual;
 
+    @OneToOne(mappedBy = "promocao")
+    private Produto produto;
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
     public Integer getCodigo() {
         return codigo;
     }

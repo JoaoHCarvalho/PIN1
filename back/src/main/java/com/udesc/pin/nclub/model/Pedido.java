@@ -19,6 +19,30 @@ public class Pedido {
     @Temporal(TemporalType.DATE)
     private Date dataEntrega;
 
+    @ManyToOne
+    @JoinColumn(name = "forma_entrega_id")
+    private FormaEntrega formaEntrega;
+
+    @ManyToOne
+    @JoinColumn(name = "forma_pagamento_id")
+    private FormaPagamento formaPagamento;
+
+    public FormaEntrega getFormaEntrega() {
+        return formaEntrega;
+    }
+
+    public void setFormaEntrega(FormaEntrega formaEntrega) {
+        this.formaEntrega = formaEntrega;
+    }
+
+    public FormaPagamento getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public void setFormaPagamento(FormaPagamento formaPagamento) {
+        this.formaPagamento = formaPagamento;
+    }
+
     public Integer getCodigo() {
         return codigo;
     }

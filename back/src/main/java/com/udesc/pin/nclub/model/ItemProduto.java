@@ -16,7 +16,20 @@ public class ItemProduto {
     private char status;
 
     @ManyToOne
+    @JoinColumn(name = "produto_id")
     private Produto produto;
+
+    @ManyToOne
+    @JoinColumn(name = "carrinho_id")
+    private CarrinhoCompra carrinho;
+
+    public CarrinhoCompra getCarrinho() {
+        return carrinho;
+    }
+
+    public void setCarrinho(CarrinhoCompra carrinho) {
+        this.carrinho = carrinho;
+    }
 
     public Integer getCodigo() {
         return codigo;

@@ -17,6 +17,7 @@ public class EnderecoUsuario {
     private String pais;
 
     @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
     public Integer getCodigo() {

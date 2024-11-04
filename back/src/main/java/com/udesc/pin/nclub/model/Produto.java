@@ -14,10 +14,30 @@ public class Produto {
     private String descricao;
 
     @ManyToOne
+    @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
     @OneToMany(mappedBy = "produto")
-    private List<ItemProduto> itensProduto;
+    private List<ItemProduto> itens;
+
+    @OneToOne
+    private Promocao promocao;
+
+    public Promocao getPromocao() {
+        return promocao;
+    }
+
+    public void setPromocao(Promocao promocao) {
+        this.promocao = promocao;
+    }
+
+    public List<ItemProduto> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<ItemProduto> itens) {
+        this.itens = itens;
+    }
 
     public Integer getCodigo() {
         return codigo;
@@ -51,11 +71,4 @@ public class Produto {
         this.categoria = categoria;
     }
 
-    public List<ItemProduto> getItensProduto() {
-        return itensProduto;
-    }
-
-    public void setItensProduto(List<ItemProduto> itensProduto) {
-        this.itensProduto = itensProduto;
-    }
 }

@@ -2,6 +2,8 @@ package com.udesc.pin.nclub.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class FormaPagamento {
     @Id
@@ -11,6 +13,28 @@ public class FormaPagamento {
     private String descricao;
     private char status;
     private String tipo;
+
+    @OneToMany(mappedBy = "formaPagamento")
+    private List<Pedido> pedidos;
+
+    @OneToOne
+    private DadosCartao dadosCartao;
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+
+    public DadosCartao getDadosCartao() {
+        return dadosCartao;
+    }
+
+    public void setDadosCartao(DadosCartao dadosCartao) {
+        this.dadosCartao = dadosCartao;
+    }
 
     public Integer getCodigo() {
         return codigo;
