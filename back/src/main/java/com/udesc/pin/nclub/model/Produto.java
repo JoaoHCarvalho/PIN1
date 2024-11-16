@@ -40,9 +40,6 @@ public class Produto {
         this.categoria = categoria;
     }
 
-    @OneToMany(mappedBy = "produto")
-    private List<ItemProduto> itens;
-
     @OneToOne
     private Promocao promocao;
 
@@ -52,14 +49,6 @@ public class Produto {
 
     public void setPromocao(Promocao promocao) {
         this.promocao = promocao;
-    }
-
-    public List<ItemProduto> getItens() {
-        return itens;
-    }
-
-    public void setItens(List<ItemProduto> itens) {
-        this.itens = itens;
     }
 
     public Integer getCodigo() {

@@ -10,8 +10,36 @@ public class CarrinhoCompra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
 
-    @OneToMany(mappedBy = "carrinho")
-    private List<ItemProduto> itens;
+    private int quantidade;
+
+    private int produtoCodigo;
+
+    @Column(name = "user_id")
+    private int userId;
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public int getProdutoCodigo() {
+        return produtoCodigo;
+    }
+
+    public void setProdutoCodigo(int produtoCodigo) {
+        this.produtoCodigo = produtoCodigo;
+    }
+
+    public int getUser_id() {
+        return userId;
+    }
+
+    public void setUser_id(int user_id) {
+        this.userId = user_id;
+    }
 
     public Integer getCodigo() {
         return codigo;
@@ -21,11 +49,4 @@ public class CarrinhoCompra {
         this.codigo = codigo;
     }
 
-    public List<ItemProduto> getItens() {
-        return itens;
-    }
-
-    public void setItens(List<ItemProduto> itens) {
-        this.itens = itens;
-    }
 }

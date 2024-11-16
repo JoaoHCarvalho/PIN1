@@ -9,6 +9,15 @@ public class Comentario {
     private Integer codigo;
 
     private String mensagem;
+    private int codigoProd;
+
+    public int getCodigoProd() {
+        return codigoProd;
+    }
+
+    public void setCodigoProd(int codigoProd) {
+        this.codigoProd = codigoProd;
+    }
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")

@@ -15,6 +15,8 @@ public class Cliente extends Usuario{
     @Temporal(TemporalType.DATE)
     private Date dataNascimento;
     private String telefone;
+    private String cpf;
+    private String email;
 
     @OneToMany(mappedBy = "cliente")
     private List<EnderecoUsuario> enderecos;
@@ -60,5 +62,21 @@ public class Cliente extends Usuario{
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

@@ -6,13 +6,11 @@ import com.udesc.pin.nclub.model.Usuario;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/carrinho")
@@ -20,7 +18,7 @@ public class CarrinhoCompraController {
     @Autowired
     private CarrinhoCompraRepository carrinhoCompraRepository;
 
-    @PostMapping("/create")
+    @PostMapping("/adicionar")
     public ResponseEntity<CarrinhoCompra> createCarrinho(@Valid @RequestBody CarrinhoCompra carrinhoCompra){
         CarrinhoCompra savedCarrinho = carrinhoCompraRepository.save(carrinhoCompra);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -28,5 +26,10 @@ public class CarrinhoCompraController {
                 .buildAndExpand(savedCarrinho.getCodigo())
                 .toUri();
         return ResponseEntity.created(location).build();
+    }
+
+    @GetMapping("/user/{id}")
+    public List<CarrinhoCompra> findByUser(@PathVariable int id){
+        return carrinhoCompraRepository.findByUserId(id);
     }
 }
