@@ -100,7 +100,7 @@ const AppRoutes = () => {
                     <Route path='/perfil' element={<DadosPerfil />}>
                         <Route index element={<DadosPessoaisPerfil />} />
                         <Route path="/perfil/enderecos" element={<DadosPessoaisEnderecos />} />
-                        <Route path="/perfil/editar-endereco" element={<EditarEndereco />} />
+                        <Route path="/perfil/editar-endereco/:codigo" element={<EditarEndereco />} />
                         <Route path="/perfil/pedidos-realizados" element={<PedidosRealizados />} />
                     </Route>
                 </Route>

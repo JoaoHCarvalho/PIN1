@@ -11,14 +11,12 @@ public class EnderecoUsuario {
     private String cep;
     private int numero;
     private String bairro;
-    private String logradouro;
+    private String rua;
     private String cidade;
     private String estado;
-    private String pais;
 
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
+    @Column(name = "user_id")
+    private int userId;
 
     public Integer getCodigo() {
         return codigo;
@@ -52,14 +50,6 @@ public class EnderecoUsuario {
         this.bairro = bairro;
     }
 
-    public String getLogradouro() {
-        return logradouro;
-    }
-
-    public void setLogradouro(String logradouro) {
-        this.logradouro = logradouro;
-    }
-
     public String getCidade() {
         return cidade;
     }
@@ -76,19 +66,19 @@ public class EnderecoUsuario {
         this.estado = estado;
     }
 
-    public String getPais() {
-        return pais;
+    public String getRua() {
+        return rua;
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
+    public void setRua(String rua) {
+        this.rua = rua;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

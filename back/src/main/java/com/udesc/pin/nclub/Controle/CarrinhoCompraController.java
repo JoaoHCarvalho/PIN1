@@ -32,4 +32,9 @@ public class CarrinhoCompraController {
     public List<CarrinhoCompra> findByUser(@PathVariable int id){
         return carrinhoCompraRepository.findByUserId(id);
     }
+    @DeleteMapping("/delete")
+    public int deleteAll(){
+        carrinhoCompraRepository.deleteAll();
+        return 1;
+    }
 }

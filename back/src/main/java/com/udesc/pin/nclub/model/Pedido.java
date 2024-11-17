@@ -20,19 +20,30 @@ public class Pedido {
     private Date dataEntrega;
 
     @ManyToOne
-    @JoinColumn(name = "forma_entrega_id")
-    private FormaEntrega formaEntrega;
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
 
     @ManyToOne
     @JoinColumn(name = "forma_pagamento_id")
     private FormaPagamento formaPagamento;
 
-    public FormaEntrega getFormaEntrega() {
-        return formaEntrega;
+    @Column(name = "user_id")
+    private int userId;
+
+    public int getUserId() {
+        return userId;
     }
 
-    public void setFormaEntrega(FormaEntrega formaEntrega) {
-        this.formaEntrega = formaEntrega;
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public FormaPagamento getFormaPagamento() {

@@ -53,14 +53,14 @@ public class UsuarioControler {
     public Cliente getClienteByEmail(@PathVariable String email){
         Cliente temp =clienteRepository.findByEmail(email);
         temp.setComentarios(null);
-        temp.setEnderecos(null);
+        temp.setPedidos(null);
         return temp;
     }
     @GetMapping("/status")
     public Cliente getLogin(){
         Cliente temp = clienteRepository.findByStatus(1);
-        temp.setEnderecos(null);
         temp.setComentarios(null);
+        temp.setPedidos(null);
         return temp;
     }
     @GetMapping("/logon/{id}")

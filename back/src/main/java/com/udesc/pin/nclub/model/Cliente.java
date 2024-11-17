@@ -19,10 +19,18 @@ public class Cliente extends Usuario{
     private String email;
 
     @OneToMany(mappedBy = "cliente")
-    private List<EnderecoUsuario> enderecos;
+    private List<Comentario> comentarios;
 
     @OneToMany(mappedBy = "cliente")
-    private List<Comentario> comentarios;
+    private List<Pedido> pedidos;
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
 
     public List<Comentario> getComentarios() {
         return comentarios;
@@ -30,14 +38,6 @@ public class Cliente extends Usuario{
 
     public void setComentarios(List<Comentario> comentarios) {
         this.comentarios = comentarios;
-    }
-
-    public List<EnderecoUsuario> getEnderecos() {
-        return enderecos;
-    }
-
-    public void setEnderecos(List<EnderecoUsuario> enderecos) {
-        this.enderecos = enderecos;
     }
 
     public String getNome() {

@@ -69,4 +69,8 @@ public class ProdutoController {
         });
         return temp;
     }
+    @GetMapping("/nome/{nome}")
+    public Produto findByNome(@PathVariable String nome){
+        return produtoRepository.findByDescricao(nome);
+    }
 }
