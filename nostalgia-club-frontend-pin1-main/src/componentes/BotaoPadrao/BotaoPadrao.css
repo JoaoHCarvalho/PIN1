@@ -1,0 +1,33 @@
+.botao-padrao {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+    color: #000;
+
+    /* Subheader */
+    font-family: Outfit;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.71875rem;
+    /* 137.5% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+
+    border-radius: 0.625rem;
+    background: var(--primaria, #ABD9D9);
+    border: none;    
+}
+
+.botao-padrao:hover{
+    color: var(--Titulos-h1, #6CAEAE);
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-49 {
+    width: 49%;
+}

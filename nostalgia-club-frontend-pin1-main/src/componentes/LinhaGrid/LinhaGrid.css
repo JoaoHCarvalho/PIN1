@@ -1,0 +1,58 @@
+.linha-grid {
+    display: flex;
+    background: var(--secundaria, #D4E8E1);
+    border-radius: 0.5rem;
+    padding: 1rem 0.4rem;
+    margin-top: 0.6rem;
+}
+
+.linha-grid span {
+    margin-right: 1rem;
+    color: #000;
+
+    /* Body Text */
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3rem;
+    /* 152.778% */
+}
+
+.linha-grid a {
+    text-decoration: none;
+    margin-right: 1rem;
+    color: #000;
+
+    /* Body Text */
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3rem;
+    /* 152.778% */
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.al-c {
+    text-align: center;
+}
+
+.al-e {
+    text-align: left;
+}

@@ -1,0 +1,25 @@
+.menu {
+    width: 80%;    
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    
+}
+
+.menu-nav-options {    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.menu-perfil-options {    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 15%;
+}
+
+.menu .box-pesquisa{
+    width: 35%;
+}

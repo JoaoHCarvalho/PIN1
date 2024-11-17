@@ -1,0 +1,37 @@
+.campo-forma-pagamento {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.campo-forma-pagamento label {
+    color: #000;
+
+    /* Subheader */
+    font-family: Outfit;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.71875rem;
+    /* 137.5% */
+    letter-spacing: 0.02rem;
+    text-transform: uppercase;
+}
+
+.campo-forma-pagamento select {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.625rem;
+    background: var(--secundaria, #D4E8E1);
+    color: #000;
+
+    /* Body Text */
+    font-family: Roboto;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem;
+    /* 152.778% */
+}

@@ -1,0 +1,22 @@
+.botao-confirmar {
+    border: none;
+    border-radius: 0.875rem;
+    background: var(--primaria, #ABD9D9);
+    cursor: pointer;
+    color: #000;
+    margin: 0.5rem 0;
+
+    /* Subheader */
+    font-family: Outfit;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.71875rem;
+    /* 137.5% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;    
+}
+
+.botao-confirmar:hover {
+    color: var(--primaria, #198484);
+}

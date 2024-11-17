@@ -3,7 +3,6 @@ package com.udesc.pin.nclub.Controle;
 import com.udesc.pin.nclub.Repositorio.ClienteRepository;
 import com.udesc.pin.nclub.Repositorio.UsuarioRepository;
 import com.udesc.pin.nclub.model.Cliente;
-import com.udesc.pin.nclub.model.Usuario;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +32,19 @@ public class UsuarioControler {
                 .toUri();
         return ResponseEntity.created(location).build();
     }
+    @PutMapping("/{id}")
+    public Cliente atualizarCliente(@PathVariable Integer id, @RequestBody Cliente clienteAtualizado) {
+        Cliente cliente = clienteRepository.findById(id).get();
+        cliente.setNome(clienteAtualizado.getNome());
+        cliente.setEmail(clienteAtualizado.getEmail());
+        cliente.setCpf(clienteAtualizado.getCpf());
+        cliente.setDataNascimento(clienteAtualizado.getDataNascimento());
+        cliente.setTelefone(clienteAtualizado.getTelefone());
+        if (clienteAtualizado.getSenha() != null && !clienteAtualizado.getSenha().isEmpty()) {
+            cliente.setSenha(clienteAtualizado.getSenha());
+        }
+        return clienteRepository.save(cliente);
+    }
     @GetMapping("/cliente/{id}")
     public Cliente getClienteById(@PathVariable int id){
         return clienteRepository.findById(id).get();
@@ -42,6 +54,27 @@ public class UsuarioControler {
         Cliente temp =clienteRepository.findByEmail(email);
         temp.setComentarios(null);
         temp.setEnderecos(null);
+        return temp;
+    }
+    @GetMapping("/status")
+    public Cliente getLogin(){
+        Cliente temp = clienteRepository.findByStatus(1);
+        temp.setEnderecos(null);
+        temp.setComentarios(null);
+        return temp;
+    }
+    @GetMapping("/logon/{id}")
+    public Cliente logonCliente(@PathVariable int id){
+        Cliente temp = clienteRepository.findById(id).get();
+        temp.setStatus(1);
+        clienteRepository.save(temp);
+        return temp;
+    }
+    @GetMapping("/logoff/{id}")
+    public Cliente logoffCliente(@PathVariable int id){
+        Cliente temp = clienteRepository.findById(id).get();
+        temp.setStatus(0);
+        clienteRepository.save(temp);
         return temp;
     }
 }

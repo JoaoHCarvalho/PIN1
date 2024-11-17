@@ -1,0 +1,60 @@
+.card-total-pedido {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.card-total-pedido span {
+    color: #000;
+    text-align: center;
+    margin-bottom: 0.5rem;
+
+    /* Subheader */
+    font-family: Outfit;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.71875rem;
+    /* 137.5% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+
+.card-total-pedido .card-total-pedido__box {
+    border-radius: 0.3125rem;
+    border: 1px solid #000;
+    padding: 1rem;
+}
+
+.card-total-pedido .card-total-pedido__box .card-total-pedido__box__linha {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-total-pedido .card-total-pedido__box .card-total-pedido__box__linha .titulo {
+    color: #000;
+    text-align: center;
+    margin-right: 1rem;
+
+    /* Subheader */
+    font-family: Outfit;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.71875rem;
+    /* 137.5% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+
+.card-total-pedido .card-total-pedido__box .card-total-pedido__box__linha .valor {
+    color: #000;
+    font-family: Outfit;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.71875rem;
+    /* 137.5% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}

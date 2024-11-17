@@ -1,0 +1,18 @@
+.pedidos-realizados h2 {
+    margin: 0;
+    color: var(--Titulos-h1, #6CAEAE);
+
+    /* H2 */
+    font-family: Outfit;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    /* 3.5rem */
+    text-transform: capitalize;
+
+}
+
+.pedidos-realizados .pedidos-realizados__grid {
+    margin-top: 2rem;
+}

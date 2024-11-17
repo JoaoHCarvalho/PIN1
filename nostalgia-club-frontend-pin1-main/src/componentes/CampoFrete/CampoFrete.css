@@ -1,0 +1,35 @@
+.campo-frete {
+    display: flex;
+    padding: 1rem;
+    background-color: var(--secundaria, #D4E8E1);
+    border-radius: 1.1875rem;
+}
+
+.campo-frete input {
+    border: none;
+    font-size: 1rem;
+    background-color: transparent;
+    width: 10rem;
+    border-bottom: 1px solid black;
+}
+
+.campo-frete span {
+    color: #000;
+
+    /* Subheader */
+    font-family: Outfit;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.2rem;
+    /* 137.5% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+
+.campo-frete__valor {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-right: 1rem;
+}

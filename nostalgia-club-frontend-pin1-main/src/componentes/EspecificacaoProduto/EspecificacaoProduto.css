@@ -1,0 +1,35 @@
+.especificacao-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.especificacao-produto h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--Titulos-h1, #6CAEAE);
+    text-align: right;
+
+    /* H2 */
+    font-family: Outfit;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    /* 3.5rem */
+    text-transform: capitalize;
+}
+
+.especificacao-produto p {
+    margin: 0;
+    width: 90%;
+    text-align: justify;
+    color: #000;    
+
+    /* Body Text */
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.35rem;
+    /* 152.778% */
+}

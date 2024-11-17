@@ -1,0 +1,40 @@
+.botao-quantidade-compra {
+    background-color: var(--secundaria, #D4E8E1);
+    border-radius: 0.9375rem;
+    margin: 0.5rem;
+    color: #000;
+
+    /* Subheader */
+    font-family: Outfit;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.71875rem; /* 137.5% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+
+.botao-quantidade-compra span {
+    font-size: 1.25rem;
+}
+
+.botao-quantidade-compra button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0.7rem;    
+    font-size: 1.25rem;
+
+    /* Subheader */
+    font-family: Outfit;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.71875rem; /* 137.5% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+
+.botao-quantidade-compra button:hover {
+    color: var(--primaria, #198484);
+}

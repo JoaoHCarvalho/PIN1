@@ -1,0 +1,15 @@
+.area-operacoes-produto {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 90%;
+}
+
+.area-operacoes-produto .botoes-compra {
+    display: flex;
+    justify-content: end;
+}
+
+.area-operacoes-produto .info-prazo {
+    margin-top: 0.5rem;
+}

@@ -1,0 +1,30 @@
+.dados-pessoais-enderecos h2 {
+    color: var(--Titulos-h1, #6CAEAE);
+    margin: 0;
+
+    /* H2 */
+    font-family: Outfit;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    /* 3.5rem */
+    text-transform: capitalize;
+}
+
+.dados-pessoais-enderecos .dados-pessoais-enderecos__grid {
+    margin-top: 2rem;
+}
+
+.dados-pessoais-enderecos .dados-pessoais-enderecos__grid .dados-pessoais-enderecos__grid__linhas a {
+    color: #000;
+    text-decoration: none;
+
+    /* Body Text */
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.71875rem;
+    /* 152.778% */
+}

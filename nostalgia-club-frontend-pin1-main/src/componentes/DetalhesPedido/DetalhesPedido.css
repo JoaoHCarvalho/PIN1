@@ -1,0 +1,26 @@
+.detalhes-pedido {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+
+.detalhes-pedido .detalhes-pedido__forms {
+    width: 50%;
+}
+
+.detalhes-pedido .detalhes-pedido__forms h1 {
+    color: var(--Titulos-h1, #6CAEAE);
+    margin: 0 0 3rem 0;
+    font-family: Outfit;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    /* 3rem */
+    text-transform: capitalize;
+}
+
+.detalhes-pedido .detalhes-pedido__forms .detalhes-pedido__forms_pessoal {
+    margin-bottom: 3rem;
+}

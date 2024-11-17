@@ -1,0 +1,6 @@
+.pagina-base {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 0.5rem;
+}

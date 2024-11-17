@@ -1,0 +1,42 @@
+.cabecalho-grid {
+    display: flex;
+}
+
+.cabecalho-grid span {
+    margin-right: 1rem;
+    color: #000;
+
+    /* Subheader */
+    font-family: Outfit;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.2rem;
+    /* 137.5% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.al-c {
+    text-align: center;
+}
+
+.al-e {
+    text-align: left;
+}

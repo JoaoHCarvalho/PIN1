@@ -1,0 +1,14 @@
+.banner {
+    margin-top: 1rem;
+    width: 80%;    
+    height: 18.5rem;
+}
+
+.banner div {
+    height: 100%;
+    width: 100%;
+    background: url("../../../public/imagens/banner-inicial-01.png") lightgray -10.53px -451px / 102.957% 416.216% no-repeat;
+    background-position: 50% 55%;
+    background-size: cover;    
+    border-radius: 1.25rem;
+}

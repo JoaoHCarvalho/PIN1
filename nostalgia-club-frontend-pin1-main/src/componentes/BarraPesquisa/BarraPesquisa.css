@@ -1,0 +1,18 @@
+.box-pesquisa {
+    display: flex;
+    align-items: center;
+}
+
+.box-pesquisa form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.box-pesquisa form input {
+    width: 100%;
+    border-radius: 1rem;
+    background: rgba(171, 217, 201, 0.80);
+    padding: 0.4rem;
+    border: none;
+}

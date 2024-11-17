@@ -1,0 +1,17 @@
+.formulario-dados-cartao {
+    width: 50%;
+}
+
+.formulario-dados-cartao h3 {
+    color: #000;
+
+    /* Subheader */
+    font-family: Outfit;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.71875rem;
+    /* 137.5% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}

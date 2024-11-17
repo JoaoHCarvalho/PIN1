@@ -10,7 +10,7 @@ public class Usuario {
     private Integer usuarioId;
 
     private String senha;
-    private char status;
+    private int status;
 
     public Integer getUsuarioId() {
         return usuarioId;
@@ -28,11 +28,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public char getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(char status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 }

@@ -1,0 +1,24 @@
+.menu-dados-perfil .menu-dados-perfil__grupo {
+    margin-bottom: 2rem;
+}
+
+.menu-dados-perfil .menu-dados-perfil__grupo span {
+    color: var(--Titulos-h1, #6CAEAE);
+    font-family: Outfit;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    /* 1.5rem */
+    text-transform: capitalize;
+}
+
+.menu-dados-perfil .menu-dados-perfil__grupo .menu-dados-perfil__grupo__itens {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-dados-perfil .menu-dados-perfil__grupo .menu-dados-perfil__grupo__itens a {
+    text-decoration: none;
+    color: #000;
+}

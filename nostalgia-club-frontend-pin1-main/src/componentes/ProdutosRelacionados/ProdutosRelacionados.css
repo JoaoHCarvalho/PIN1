@@ -1,0 +1,28 @@
+.produtos-relacionados {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.produtos-relacionados h3 {
+    color: #000;
+    margin: 0;
+    text-align: left;
+
+    /* H2 */
+    font-family: Outfit;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    /* 3.5rem */
+    text-transform: capitalize;
+}
+
+.produtos-relacionados__cards {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

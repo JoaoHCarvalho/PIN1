@@ -1,0 +1,35 @@
+.titulo-acesso {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.titulo-acesso h1 {
+    color: var(--Titulos-h1, #6CAEAE);
+    text-align: left;
+    margin: 0;
+
+    /* H2 */
+    font-family: Outfit;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    /* 3.5rem */
+    text-transform: capitalize;
+}
+
+.titulo-acesso span {
+    color: #000;
+    margin-top: 1rem;
+
+    /* Subheader */
+    font-family: Outfit;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.71875rem;
+    /* 137.5% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}

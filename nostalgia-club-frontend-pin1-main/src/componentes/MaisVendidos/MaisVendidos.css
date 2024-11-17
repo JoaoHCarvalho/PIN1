@@ -1,0 +1,10 @@
+.mais-vendidos {    
+    margin-top: 5rem;
+    width: 80%;
+}
+
+.mais-vendidos .mais-vendidos__produtos{    
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}

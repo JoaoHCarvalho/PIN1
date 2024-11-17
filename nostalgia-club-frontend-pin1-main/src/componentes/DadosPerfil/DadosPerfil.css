@@ -1,0 +1,10 @@
+.dados-perfil {
+    padding: 1rem;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dados-perfil .dados-perfil__secao {
+    width: 65%;
+}

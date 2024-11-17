@@ -1,0 +1,31 @@
+.editar-endereco h2 {
+    margin: 0;
+    color: var(--Titulos-h1, #6CAEAE);
+
+    /* H2 */
+    font-family: Outfit;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    /* 3.5rem */
+    text-transform: capitalize;
+}
+
+.editar-endereco .editar-endereco__form {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 100%;
+}
+
+.editar-endereco .editar-endereco__form .editar-endereco__form__botoes {
+    width: 60%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.editar-endereco .editar-endereco__form .editar-endereco__form__botoes button {
+    margin-top: 0;
+}
