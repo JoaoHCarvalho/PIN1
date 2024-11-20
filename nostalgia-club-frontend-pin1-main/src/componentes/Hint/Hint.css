@@ -1,0 +1,67 @@
+.hint-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.hint-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--Titulos-h1, #6CAEAE);
+    /* Cor do círculo */
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+}
+
+.hint-message {
+    position: absolute;
+    bottom: 125%;
+    /* Exibe acima do ponto de interrogação */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    /* Permite quebra de linha */
+    word-wrap: break-word;
+    /* Quebra palavras longas se necessário */
+    max-width: 250px;
+    /* Aumenta um pouco a largura máxima para evitar quebras muito frequentes */
+    box-sizing: border-box;
+    /* Garante que o padding não afete a largura total */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+
+    /* Garante que o texto não ultrapasse a caixa */
+    overflow-wrap: break-word;
+
+    white-space: nowrap;  /* Impede quebras de linha */
+    overflow: hidden;     /* Oculta o excesso de texto */
+    text-overflow: ellipsis; /* Adiciona '...' no final se o texto for muito longo */
+}
+
+.hint-container:hover .hint-message {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Ajuste dinâmico para evitar que o tooltip ultrapasse a tela */
+.hint-container:hover .hint-message {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Garantir que o tooltip não ultrapasse a tela (ajustando à largura da tela) */
+.hint-container:hover .hint-message {
+    max-width: calc(100vw - 40px);
+}

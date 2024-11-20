@@ -83,6 +83,7 @@ const MeuCarrinho = () => {
         <section className="meu-carrinho">
             <h1>Meu Carrinho</h1>
             <GridProdutosCarrinho cabecalho={cabecalho} itens={itens} />
+            <BotaoPadrao titulo="Limpar Carrinho" tamanho="w-20"/>
             <div className="meu-carrinho__total">
                 <CardTotalPedido
                     subtotal={`R$ ${subtotal.toFixed(2)}`}
@@ -91,6 +92,8 @@ const MeuCarrinho = () => {
                 >
                     <BotaoPadrao titulo="Realizar Pagamento" link="/detalhes-pedido" />
                 </CardTotalPedido>
+
+                
             </div>
         </section>
     );

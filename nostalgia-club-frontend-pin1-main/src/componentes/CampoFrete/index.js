@@ -7,7 +7,7 @@ const CampoFrete = () => {
                 <span>FRETE</span>
                 <span>R$ 27,90</span>
             </div>
-            <input type="text" placeholder="Informe seu CEP"></input>
+            <input type="text" placeholder="Informe seu CEP" disabled></input>
         </div>
     )
 }

@@ -42,6 +42,7 @@ const BarraPesquisa = (props) => {
                     placeholder={props.placeholder}
                     value={nome}
                     onChange={(e) => setNome(e.target.value)}
+                    disabled
                 />
             </form>
         </div>

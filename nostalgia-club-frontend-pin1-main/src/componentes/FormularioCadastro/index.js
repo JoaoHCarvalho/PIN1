@@ -34,8 +34,8 @@ const FormularioCadastro = () => {
             email: formData.email,
             senha: formData.senha,
             data_nascimento: "",
-            cpf:"",
-            telefone:"",
+            cpf: "",
+            telefone: "",
             status: 1
         };
 
@@ -73,21 +73,23 @@ const FormularioCadastro = () => {
     };
 
     return (
-        <section className="formulario-cadastro">
-            <div className="formulario-cadastro__capa"></div>
-            <div className="formulario-cadastro__campos">
-                <TituloAcesso titulo="Crie a sua conta" subtitulo="Insira seus detalhes abaixo" />
-                <div className="formulario-cadastro__campos__itens">
-                    <CamposLogin
-                        campos={campos}
-                        rodape={acessarLogin}
-                        formData={formData}
-                        onInputChange={handleInputChange}
-                        onSubmit={handleSubmit}
-                    />
+        <div className="container-cadastro">
+            <section className="formulario-cadastro">
+                <div className="formulario-cadastro__capa"></div>
+                <div className="formulario-cadastro__campos">
+                    <TituloAcesso titulo="Crie a sua conta" subtitulo="Insira seus detalhes abaixo" />
+                    <div className="formulario-cadastro__campos__itens">
+                        <CamposLogin
+                            campos={campos}
+                            rodape={acessarLogin}
+                            formData={formData}
+                            onInputChange={handleInputChange}
+                            onSubmit={handleSubmit}
+                        />
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     );
 };
 

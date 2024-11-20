@@ -1,5 +1,5 @@
-import React, {  useState } from 'react';
-import {  useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CamposLogin from '../CamposLogin';
 import TituloAcesso from '../TituloAcesso';
 import './FormularioLogin.css';
@@ -37,7 +37,7 @@ const FormularioLogin = () => {
             // Verifica se a senha informada é igual à senha retornada
             if (usuario.senha === formData.senha) {
                 const bruh = await axios.get(`http://localhost:8080/usuario/logon/${usuario.usuarioId}`);
-                console.log({bruh})
+                console.log({ bruh })
                 navigate('/home')
             } else {
                 setError('Senha inválida. Tente novamente.');
@@ -48,22 +48,24 @@ const FormularioLogin = () => {
     };
 
     return (
-        <section className="formulario-login">
-            <div className="formulario-login__capa"></div>
-            <div className="formulario-login__campos">
-                <TituloAcesso titulo="Faça Log-in" subtitulo="Insira seus detalhes abaixo" />
-                <div className="formulario-login__campos__itens">
-                    {error && <p className="error-message">{error}</p>}
-                    <CamposLogin
-                        campos={campos}
-                        rodape={acessarCadastro}
-                        formData={formData}
-                        onInputChange={handleInputChange}
-                        onSubmit={handleSubmit}
-                    />
+        <div className="container-login">
+            <section className="formulario-login">
+                <div className="formulario-login__capa"></div>
+                <div className="formulario-login__campos">
+                    <TituloAcesso titulo="Faça Log-in" subtitulo="Insira seus detalhes abaixo" />
+                    <div className="formulario-login__campos__itens">
+                        {error && <p className="error-message">{error}</p>}
+                        <CamposLogin
+                            campos={campos}
+                            rodape={acessarCadastro}
+                            formData={formData}
+                            onInputChange={handleInputChange}
+                            onSubmit={handleSubmit}
+                        />
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     );
 };
 

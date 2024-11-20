@@ -1,3 +1,9 @@
+.container-cadastro{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .formulario-cadastro {
     display: flex;
     justify-content: space-evenly;

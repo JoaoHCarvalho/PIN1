@@ -202,21 +202,19 @@ const FormularioDadosPessoais = () => {
                 </div>
 
                 {/* Dropdown para selecionar o endereço */}
-                <div className="agrupador">
-                    <label className="w-100">
-                        Escolher Endereço:
-                        <select
-                            className="campo-padrao"
-                            value={selectedEndereco ? selectedEndereco.codigo : ''}
-                            onChange={handleEnderecoChange}
-                        >
-                            {enderecos.map((endereco) => (
-                                <option key={endereco.codigo} value={endereco.codigo}>
-                                    {`${endereco.rua}, ${endereco.numero}, ${endereco.bairro}, ${endereco.cidade} - ${endereco.estado}`}
-                                </option>
-                            ))}
-                        </select>
-                    </label>
+                <div className="dropdown-endereco">
+                    <label>Escolher Endereço:</label>
+                    <select
+                        className="campo-padrao"
+                        value={selectedEndereco ? selectedEndereco.codigo : ''}
+                        onChange={handleEnderecoChange}
+                    >
+                        {enderecos.map((endereco) => (
+                            <option key={endereco.codigo} value={endereco.codigo}>
+                                {`${endereco.rua}, ${endereco.numero}, ${endereco.bairro}, ${endereco.cidade} - ${endereco.estado}`}
+                            </option>
+                        ))}
+                    </select>
                 </div>
 
                 <BotaoPadrao titulo="Salvar" tamanho="w-49" onClick={handleSave} type="button" />
