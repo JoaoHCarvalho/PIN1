@@ -2,8 +2,6 @@ package com.udesc.pin.nclub.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 public class Produto {
     @Id

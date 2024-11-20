@@ -1,7 +1,6 @@
 package com.udesc.pin.nclub.Controle;
 
 import com.udesc.pin.nclub.Repositorio.EnderecoUsuarioRepository;
-import com.udesc.pin.nclub.model.Cliente;
 import com.udesc.pin.nclub.model.EnderecoUsuario;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

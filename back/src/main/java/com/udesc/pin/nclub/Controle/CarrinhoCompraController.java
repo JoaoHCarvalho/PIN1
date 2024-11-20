@@ -2,7 +2,6 @@ package com.udesc.pin.nclub.Controle;
 
 import com.udesc.pin.nclub.Repositorio.CarrinhoCompraRepository;
 import com.udesc.pin.nclub.model.CarrinhoCompra;
-import com.udesc.pin.nclub.model.Usuario;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
