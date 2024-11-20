@@ -14,7 +14,7 @@ const Menu = () => {
 
             <div className="menu-nav-pesquisa">
                 <BarraPesquisa placeholder="O que você quer encontrar hoje?" width="70%"/>
-                <Hint mensagem="A pesquisa está temporariamente desativada." />
+                <Hint mensagem="Informe o nome exato do produto para acessar seu detalhamento." />
             </div>
 
             <div className="menu-perfil-options">
