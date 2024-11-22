@@ -5,12 +5,11 @@ const BotaoPadrao = (props) => {
     const navigate = useNavigate();
 
     const handleClick = (event) => {
-        // Executa uma função personalizada, se fornecida
+        
         if (props.onClick) {
-            props.onClick(event); // Passa o evento para o manipulador
+            props.onClick(event); 
         }
 
-        // Redireciona, se um link for fornecido
         if (props.link) {
             navigate(props.link);
         }
@@ -20,7 +19,7 @@ const BotaoPadrao = (props) => {
         <button
             className={`botao-padrao ${props.tamanho || ''}`}
             onClick={handleClick}
-            type={props.type || 'button'} // Default para 'button', mas permite 'submit'
+            type={props.type || 'button'}
         >
             {props.titulo}
         </button>

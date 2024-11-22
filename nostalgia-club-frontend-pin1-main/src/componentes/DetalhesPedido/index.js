@@ -14,7 +14,6 @@ const DetalhesPedido = () => {
     useEffect(() => {
         const fetchDetalhesPedido = async () => {
             try {
-                // Obter o usuarioId do endpoint /usuario/status
                 const responseStatus = await fetch('http://localhost:8080/usuario/status');
                 if (!responseStatus.ok) {
                     throw new Error('Erro ao obter o status do usuário.');
@@ -28,14 +27,12 @@ const DetalhesPedido = () => {
 
                 setUserId(usuarioId);
 
-                // Buscar itens do carrinho para o usuarioId
                 const responseCarrinho = await fetch(`http://localhost:8080/carrinho/user/${usuarioId}`);
                 if (!responseCarrinho.ok) {
                     throw new Error('Erro ao obter o carrinho do usuário.');
                 }
                 const carrinhoData = await responseCarrinho.json();
 
-                // Buscar detalhes de cada produto no carrinho
                 const produtosPromises = carrinhoData.map(async (item) => {
                     const responseProduto = await fetch(`http://localhost:8080/produto/${item.produtoCodigo}`);
                     const produtoData = await responseProduto.json();
@@ -48,7 +45,6 @@ const DetalhesPedido = () => {
 
                 const produtos = await Promise.all(produtosPromises);
 
-                // Atualizar subtotal e total
                 const subtotal = produtos.reduce((acc, item) => acc + item.subtotal, 0);
                 setSubtotal(subtotal);
                 setTotal(subtotal + frete);
@@ -67,21 +63,19 @@ const DetalhesPedido = () => {
                 return;
             }
 
-            // Obter a data atual e calcular a data de entrega
             const dataAtual = new Date();
-            const dataPedido = dataAtual.toISOString().split('T')[0]; // Formato YYYY-MM-DD
-            const diasEntrega = Math.floor(Math.random() * (15 - 6 + 1)) + 6; // Aleatório entre 6 e 15 dias
+            const dataPedido = dataAtual.toISOString().split('T')[0];
+            const diasEntrega = Math.floor(Math.random() * (15 - 6 + 1)) + 6; 
             const dataEntrega = new Date(dataAtual);
             dataEntrega.setDate(dataAtual.getDate() + diasEntrega);
             const dataEntregaFormatada = dataEntrega.toISOString().split('T')[0];
 
-            // Criar o pedido
             const pedido = {
                 valorCompra: subtotal,
                 valorFrete: frete,
                 dataPedido,
                 dataEntrega: dataEntregaFormatada,
-                cliente: null, // Presumindo que o cliente será preenchido pelo backend
+                cliente: null, 
                 formaPagamento: null,
                 userId,
             };
@@ -98,7 +92,6 @@ const DetalhesPedido = () => {
                 throw new Error('Erro ao criar o pedido.');
             }
 
-            // Limpar o carrinho
             const responseLimparCarrinho = await fetch('http://localhost:8080/carrinho/delete', {
                 method: 'DELETE',
             });
@@ -108,7 +101,7 @@ const DetalhesPedido = () => {
             }
 
             alert('Pedido finalizado com sucesso!');
-            window.location.href = '/perfil/pedidos-realizados'; // Redirecionar para pedidos realizados
+            window.location.href = '/perfil/pedidos-realizados'; 
         } catch (error) {
             console.error('Erro ao finalizar o pedido:', error);
             alert('Erro ao finalizar o pedido. Tente novamente.');

@@ -23,7 +23,6 @@ const Comentarios = ({ codigo, comentarios, comentariosCarregados, recarregarCom
         try {
             setEnviando(true);
 
-            // Obter o cliente a partir do status
             const responseStatus = await fetch('http://localhost:8080/usuario/status');
             if (!responseStatus.ok) {
                 throw new Error('Erro ao obter o status do usuário.');
@@ -35,7 +34,6 @@ const Comentarios = ({ codigo, comentarios, comentariosCarregados, recarregarCom
                 throw new Error('Usuário não autenticado.');
             }
 
-            // Criar o comentário
             const comentarioData = {
                 mensagem: comentario,
                 codigoProd: codigo,
@@ -60,7 +58,6 @@ const Comentarios = ({ codigo, comentarios, comentariosCarregados, recarregarCom
             alert('Comentário enviado com sucesso!');
             setComentario('');
 
-            // Atualiza a lista de comentários após o envio
             recarregarComentarios();
         } catch (error) {
             console.error('Erro ao enviar comentário:', error);

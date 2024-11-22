@@ -30,11 +30,9 @@ const FormularioLogin = () => {
         setError('');
 
         try {
-            // Faz a requisição para buscar o usuário pelo e-mail
             const response = await axios.get(`http://localhost:8080/usuario/email/${formData.email}`);
             const usuario = response.data;
 
-            // Verifica se a senha informada é igual à senha retornada
             if (usuario.senha === formData.senha) {
                 const bruh = await axios.get(`http://localhost:8080/usuario/logon/${usuario.usuarioId}`);
                 console.log({ bruh })

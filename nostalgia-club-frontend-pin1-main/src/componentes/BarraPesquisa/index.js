@@ -23,7 +23,6 @@ const BarraPesquisa = (props) => {
             const produto = await response.json();
 
             if (produto?.codigo) {
-                // Redirecionar para a página de detalhes do produto
                 navigate(`/detalhes-produto/${produto.codigo}`);
             } else {
                 alert('Produto não encontrado.');

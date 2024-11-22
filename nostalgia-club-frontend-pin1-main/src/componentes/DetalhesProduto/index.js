@@ -12,7 +12,6 @@ const DetalhesProduto = () => {
     const [comentarios, setComentarios] = useState([]);
     const [comentariosCarregados, setComentariosCarregados] = useState(false);
 
-    // Função para carregar comentários
     const recarregarComentarios = () => {
         setComentariosCarregados(false);
         fetch(`http://localhost:8080/comentario/all/${codigo}`)
@@ -20,7 +19,7 @@ const DetalhesProduto = () => {
             .then(data => {
                 const comentariosComAutor = data.map(comentario => ({
                     ...comentario,
-                    autor: comentario.cliente ? comentario.cliente.nome : "Anônimo" // Usa o nome do cliente, ou "Anônimo" se não houver cliente
+                    autor: comentario.cliente ? comentario.cliente.nome : "Anônimo" 
                 }));
                 setComentarios(comentariosComAutor);
                 setComentariosCarregados(true);
@@ -46,7 +45,6 @@ const DetalhesProduto = () => {
             })
             .catch(error => console.error("Erro ao buscar detalhes do produto:", error));
 
-        // Chama a função para carregar comentários ao montar o componente
         recarregarComentarios();
 // eslint-disable-next-line
     }, [codigo]);
@@ -79,7 +77,7 @@ const DetalhesProduto = () => {
                 codigo={codigo}
                 comentarios={comentarios}
                 comentariosCarregados={comentariosCarregados}
-                recarregarComentarios={recarregarComentarios} // Passa a função como prop
+                recarregarComentarios={recarregarComentarios} 
             />
         </section>
     );

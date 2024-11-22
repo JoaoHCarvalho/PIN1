@@ -9,7 +9,6 @@ const PedidosRealizados = () => {
     useEffect(() => {
         const fetchPedidos = async () => {
             try {
-                // Obter o usuário através do endpoint /usuario/status
                 const responseStatus = await fetch('http://localhost:8080/usuario/status');
                 if (!responseStatus.ok) {
                     throw new Error('Erro ao obter o status do usuário.');
@@ -21,7 +20,6 @@ const PedidosRealizados = () => {
                     throw new Error('Usuário não autenticado.');
                 }
 
-                // Buscar pedidos do usuário
                 const responsePedidos = await fetch(`http://localhost:8080/pedido/all/${usuarioId}`);
                 if (!responsePedidos.ok) {
                     throw new Error('Erro ao obter os pedidos do usuário.');
@@ -29,7 +27,6 @@ const PedidosRealizados = () => {
 
                 const pedidosData = await responsePedidos.json();
 
-                // Atualizar o estado com os pedidos
                 setPedidos(pedidosData);
             } catch (error) {
                 console.error('Erro ao carregar os pedidos:', error);
@@ -39,7 +36,6 @@ const PedidosRealizados = () => {
         fetchPedidos();
     }, []);
 
-    // Função para calcular o status do pedido
     const calcularStatus = (dataEntrega) => {
         const hoje = new Date();
         const entrega = new Date(dataEntrega);

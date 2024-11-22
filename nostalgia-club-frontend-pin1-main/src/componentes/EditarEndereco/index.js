@@ -5,8 +5,8 @@ import CampoPadrao from '../CampoPadrao';
 import './EditarEndereco.css';
 
 const EditarEndereco = () => {
-    const { codigo } = useParams(); // Obtém o código do parâmetro da rota
-    const navigate = useNavigate(); // Para redirecionamento após exclusão ou atualização
+    const { codigo } = useParams(); 
+    const navigate = useNavigate(); 
     const [formData, setFormData] = useState({
         cep: '',
         numero: '',
@@ -62,7 +62,7 @@ const EditarEndereco = () => {
 
             if (response.ok) {
                 alert('Endereço atualizado com sucesso!');
-                navigate('/perfil'); // Redireciona para a página de perfil
+                navigate('/perfil'); 
             } else {
                 console.error('Erro ao atualizar o endereço.');
                 alert('Erro ao atualizar o endereço.');
@@ -80,7 +80,7 @@ const EditarEndereco = () => {
 
             if (response.ok) {
                 alert('Endereço excluído com sucesso!');
-                navigate('/perfil'); // Redireciona para a página de perfil
+                navigate('/perfil'); 
             } else {
                 console.error('Erro ao excluir o endereço.');
                 alert('Erro ao excluir o endereço.');

@@ -24,7 +24,6 @@ const FormularioDadosPessoais = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                // Buscar o status do usuário
                 const responseStatus = await fetch('http://localhost:8080/usuario/status');
                 if (!responseStatus.ok) {
                     throw new Error('Erro ao buscar status do usuário.');
@@ -34,7 +33,6 @@ const FormularioDadosPessoais = () => {
 
                 setUsuarioId(id);
 
-                // Preencher dados do usuário
                 setFormData((prevData) => ({
                     ...prevData,
                     nome: statusData.nome || '',
@@ -42,13 +40,12 @@ const FormularioDadosPessoais = () => {
                     telefone: statusData.telefone || '',
                 }));
 
-                // Buscar todos os endereços do usuário
                 const responseEnderecos = await fetch(`http://localhost:8080/endereco/all/${id}`);
                 if (responseEnderecos.ok) {
                     const enderecosData = await responseEnderecos.json();
                     setEnderecos(enderecosData);
                     if (enderecosData.length > 0) {
-                        setSelectedEndereco(enderecosData[0]); // Selecionar o primeiro endereço por padrão
+                        setSelectedEndereco(enderecosData[0]); 
                         setFormData((prevData) => ({
                             ...prevData,
                             cep: enderecosData[0].cep || '',

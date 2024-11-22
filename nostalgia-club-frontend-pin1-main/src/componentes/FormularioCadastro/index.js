@@ -4,7 +4,6 @@ import TituloAcesso from '../TituloAcesso';
 import './FormularioCadastro.css';
 
 const FormularioCadastro = () => {
-    // Estado para os dados do formulário
     const [formData, setFormData] = useState({
         nome: '',
         email: '',
@@ -12,23 +11,19 @@ const FormularioCadastro = () => {
         confirmarSenha: '',
     });
 
-    // Função para atualizar os campos
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    // Função para enviar o formulário
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        // Validação básica de senha
         if (formData.senha !== formData.confirmarSenha) {
             alert('As senhas não coincidem.');
             return;
         }
 
-        // Criar o payload para o backend
         const cliente = {
             nome: formData.nome,
             email: formData.email,
@@ -48,7 +43,7 @@ const FormularioCadastro = () => {
 
             if (response.ok) {
                 alert('Cadastro realizado com sucesso!');
-                setFormData({ nome: '', email: '', senha: '', confirmarSenha: '' }); // Limpar o formulário
+                setFormData({ nome: '', email: '', senha: '', confirmarSenha: '' }); 
             } else {
                 const error = await response.json();
                 alert(`Erro ao cadastrar: ${error.message}`);

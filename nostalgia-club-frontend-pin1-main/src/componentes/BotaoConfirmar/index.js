@@ -7,7 +7,6 @@ const BotaoConfirmar = (props) => {
 
     const handleAddToCart = async () => {
         try {
-            // Obtém o usuarioId a partir do endpoint de status
             const statusResponse = await fetch('http://localhost:8080/usuario/status');
             if (!statusResponse.ok) {
                 console.error("Erro ao obter status do usuário:", statusResponse.statusText);
@@ -17,21 +16,20 @@ const BotaoConfirmar = (props) => {
             const statusData = await statusResponse.json();
             const usuarioId = statusData.usuarioId;
 
-            // Faz a requisição para adicionar ao carrinho com o usuarioId
             const addToCartResponse = await fetch('http://localhost:8080/carrinho/adicionar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    user_id: usuarioId, // Utiliza o usuarioId obtido
+                    user_id: usuarioId, 
                     produtoCodigo: props.produtoCodigo,
                     quantidade: props.quantidade,
                 }),
             });
 
             if (addToCartResponse.ok) {
-                navigate('/meucarrinho'); // Redireciona para o carrinho
+                navigate('/meucarrinho'); 
             } else {
                 console.error(
                     "Erro ao adicionar ao carrinho:",

@@ -19,7 +19,6 @@ const AppRoutes = () => {
     const [produtosDispositivos, setProdutosDispositivos] = useState([]);
 
     useEffect(() => {
-        // Fetch para produtos do tipo 1 (Mídias)
         fetch("http://localhost:8080/produto/tipo/1")
             .then(response => response.json())
             .then(data => {
@@ -50,7 +49,6 @@ const AppRoutes = () => {
             })
             .catch(error => console.error("Erro ao buscar produtos de mídia:", error));
 
-        // Fetch para produtos do tipo 2 (Dispositivos)
         fetch("http://localhost:8080/produto/tipo/2")
             .then(response => response.json())
             .then(data => {

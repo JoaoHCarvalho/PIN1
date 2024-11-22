@@ -14,7 +14,6 @@ const DadosPessoaisEnderecos = () => {
     useEffect(() => {
         const fetchEnderecos = async () => {
             try {
-                // Buscar o usuarioId através do endpoint de status
                 const responseStatus = await fetch('http://localhost:8080/usuario/status');
                 if (!responseStatus.ok) {
                     throw new Error('Erro ao buscar status do usuário.');
@@ -22,14 +21,12 @@ const DadosPessoaisEnderecos = () => {
                 const statusData = await responseStatus.json();
                 const usuarioId = statusData.usuarioId;
 
-                // Buscar endereços do usuário
                 const responseEnderecos = await fetch(`http://localhost:8080/endereco/all/${usuarioId}`);
                 if (!responseEnderecos.ok) {
                     throw new Error('Erro ao buscar endereços do usuário.');
                 }
                 const enderecosData = await responseEnderecos.json();
 
-                // Transformar os dados para o formato esperado
                 const itensFormatados = enderecosData.map((endereco) => ({
                     IdItem: endereco.codigo,
                     dadosGrid: [

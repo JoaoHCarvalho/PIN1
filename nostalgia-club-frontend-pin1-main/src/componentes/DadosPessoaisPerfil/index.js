@@ -19,13 +19,11 @@ const DadosPessoaisPerfil = () => {
     useEffect(() => {
         const fetchCliente = async () => {
             try {
-                // Buscar o status do usuário pelo endpoint /usuario/status
                 const responseStatus = await fetch('http://localhost:8080/usuario/status');
                 if (!responseStatus.ok) throw new Error('Erro ao buscar status do usuário');
                 const statusData = await responseStatus.json();
                 setUsuarioId(statusData.usuarioId);
 
-                // Preencher os dados do cliente com a resposta do status
                 setCliente({
                     nome: statusData.nome,
                     email: statusData.email,
@@ -57,7 +55,6 @@ const DadosPessoaisPerfil = () => {
         }
 
         try {
-            // Enviar update do cliente
             const response = await fetch(`http://localhost:8080/usuario/${usuarioId}`, {
                 method: 'PUT',
                 headers: {
@@ -69,7 +66,7 @@ const DadosPessoaisPerfil = () => {
                     cpf: cliente.cpf,
                     dataNascimento: cliente.dataNascimento,
                     telefone: cliente.telefone,
-                    senha: cliente.senha || undefined, // Apenas envia a senha se não estiver vazia
+                    senha: cliente.senha || undefined,
                 }),
             });
 
@@ -82,10 +79,9 @@ const DadosPessoaisPerfil = () => {
     };
 
     const handleLogoff = async (e) => {
-        e.preventDefault(); // Evitar comportamento padrão do botão no formulário
+        e.preventDefault(); 
 
         try {
-            // Realizar o logoff do usuário
             const response = await fetch(`http://localhost:8080/usuario/logoff/${usuarioId}`, {
                 method: 'GET',
             });
@@ -93,7 +89,6 @@ const DadosPessoaisPerfil = () => {
             if (!response.ok) throw new Error('Erro ao realizar logoff');
 
             alert('Logoff realizado com sucesso!');
-            // Redirecionar para a página inicial
             window.location.href = '/';
         } catch (error) {
             console.error('Erro ao realizar logoff:', error);

@@ -20,7 +20,6 @@ const MeuCarrinho = () => {
     useEffect(() => {
         const fetchCarrinho = async () => {
             try {
-                // Buscar o usuarioId do endpoint /usuario/status
                 const responseStatus = await fetch('http://localhost:8080/usuario/status');
                 if (!responseStatus.ok) {
                     throw new Error('Falha ao obter o status do usuário.');
@@ -32,14 +31,12 @@ const MeuCarrinho = () => {
                     throw new Error('Usuário não autenticado.');
                 }
 
-                // Buscar itens do carrinho para o usuarioId
                 const responseCarrinho = await fetch(`http://localhost:8080/carrinho/user/${usuarioId}`);
                 if (!responseCarrinho.ok) {
                     throw new Error('Falha ao obter o carrinho do usuário.');
                 }
                 const carrinhoData = await responseCarrinho.json();
 
-                // Buscar detalhes de cada produto no carrinho
                 const produtosPromises = carrinhoData.map(async (item) => {
                     const responseProduto = await fetch(`http://localhost:8080/produto/${item.produtoCodigo}`);
                     const produtoData = await responseProduto.json();
@@ -54,7 +51,6 @@ const MeuCarrinho = () => {
 
                 const produtos = await Promise.all(produtosPromises);
 
-                // Atualizar os itens do carrinho
                 setItens(
                     produtos.map((produto) => ({
                         IdItem: produto.id,
@@ -67,7 +63,6 @@ const MeuCarrinho = () => {
                     }))
                 );
 
-                // Atualizar subtotal e total
                 const subtotal = produtos.reduce((acc, item) => acc + item.subtotal, 0);
                 setSubtotal(subtotal);
                 setTotal(subtotal + frete);
@@ -79,7 +74,6 @@ const MeuCarrinho = () => {
         fetchCarrinho();
     }, [frete]);
 
-    // Função para limpar o carrinho
     const limparCarrinho = async () => {
         try {
             const response = await fetch('http://localhost:8080/carrinho/delete', {
@@ -89,7 +83,6 @@ const MeuCarrinho = () => {
             if (response.ok) {
                 const result = await response.json();
                 if (result === 1) {
-                    // Atualizar a interface
                     setItens([]);
                     setSubtotal(0);
                     setTotal(0);
