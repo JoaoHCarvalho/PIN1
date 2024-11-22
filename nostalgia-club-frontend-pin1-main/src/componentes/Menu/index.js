@@ -1,17 +1,21 @@
 import MenuBotao from '../MenuBotao';
 import BarraPesquisa from '../BarraPesquisa';
+import Hint from '../Hint';
 import './Menu.css';
 
-const Menu  = () => {
-    return(
+const Menu = () => {
+    return (
         <nav className="menu">
             <div className="menu-nav-options">
                 <a href="/home"><img alt='Logo' src="http://localhost:3000/imagens/logo-nclub.png" height="70rem"></img></a>
-                <MenuBotao link="/home">home</MenuBotao>
-                <MenuBotao >gerenciar</MenuBotao>                
+                <MenuBotao link="/home" enableClass="enabled">home</MenuBotao>
+                <MenuBotao enableClass="disabled">gerenciar</MenuBotao>
             </div>
 
-            <BarraPesquisa placeholder="O que você quer encontrar hoje?"/>
+            <div className="menu-nav-pesquisa">
+                <BarraPesquisa placeholder="O que você quer encontrar hoje?" width="70%"/>
+                <Hint mensagem="Informe o nome exato do produto para acessar seu detalhamento." />
+            </div>
 
             <div className="menu-perfil-options">
                 <MenuBotao link="/meucarrinho">

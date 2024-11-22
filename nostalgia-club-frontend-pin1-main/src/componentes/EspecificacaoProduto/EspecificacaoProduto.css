@@ -21,8 +21,7 @@
 
 .especificacao-produto p {
     margin: 0;
-    width: 90%;
-    text-align: justify;
+    text-align: end;
     color: #000;    
 
     /* Body Text */

@@ -57,3 +57,21 @@
     background-color: #555;
     /* Cor ao passar o mouse */
 }
+
+.form-comentario {
+    display: flex;
+}
+
+.form-comentario {
+    display: flex;
+    align-items: end;
+}
+
+.form-comentario .botao-padrao {
+    width: 7rem;
+    margin-left: 2rem;
+    font-size: 1rem;
+    padding: 0;
+    height: 2rem;
+    margin-top: 0;
+}

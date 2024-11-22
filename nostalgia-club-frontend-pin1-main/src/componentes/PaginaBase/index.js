@@ -5,9 +5,9 @@ import Footer from '../Footer'
 
 const PaginaBase = () => {
     const contatos = [
-        { 'descricao': 'Instagram', 'link': 'http://localhost:3000/?' },
-        { 'descricao': 'TikTok', 'link': 'http://localhost:3000/?' },
-        { 'descricao': 'E-mail', 'link': 'http://localhost:3000/?' }
+        { 'descricao': 'Instagram', 'link': 'https://www.instagram.com/' },
+        { 'descricao': 'TikTok', 'link': 'https://www.tiktok.com/login' },
+        { 'descricao': 'E-mail', 'link': 'mailto:nclub.suporte@gmail.com' }
     ]
 
     const categorias = [

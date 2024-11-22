@@ -112,6 +112,7 @@ const DadosPessoaisPerfil = () => {
                     name="nome"
                     value={cliente.nome}
                     onChange={handleInputChange}
+                    required={true}
                 />
                 <CampoPadrao
                     tamanho="w-100"
@@ -120,6 +121,7 @@ const DadosPessoaisPerfil = () => {
                     name="email"
                     value={cliente.email}
                     onChange={handleInputChange}
+                    required={true}
                 />
                 <div className="agrupador">
                     <CampoPadrao
@@ -129,6 +131,7 @@ const DadosPessoaisPerfil = () => {
                         name="cpf"
                         value={cliente.cpf}
                         onChange={handleInputChange}
+                        required={true}
                     />
                     <CampoPadrao
                         tamanho="w-49"
@@ -137,6 +140,7 @@ const DadosPessoaisPerfil = () => {
                         name="dataNascimento"
                         value={cliente.dataNascimento}
                         onChange={handleInputChange}
+                        required={true}
                     />
                 </div>
                 <CampoPadrao
@@ -146,6 +150,7 @@ const DadosPessoaisPerfil = () => {
                     name="telefone"
                     value={cliente.telefone}
                     onChange={handleInputChange}
+                    required={true}
                 />
                 <CampoPadrao
                     tamanho="w-100"
@@ -154,6 +159,7 @@ const DadosPessoaisPerfil = () => {
                     name="senha"
                     value={cliente.senha}
                     onChange={handleInputChange}
+                    required={false}
                 />
                 <CampoPadrao
                     tamanho="w-100"
@@ -162,13 +168,14 @@ const DadosPessoaisPerfil = () => {
                     name="confirmarSenha"
                     value={cliente.confirmarSenha}
                     onChange={handleInputChange}
+                    required={false}
                 />
                 <div className="dados-pessoais-perfil__form__botoes">
                     <BotaoPadrao
-                         titulo="Logoff"
-                         tamanho="w-49"
-                         onClick={handleLogoff}
-                         type="button"
+                        titulo="Logoff"
+                        tamanho="w-49"
+                        onClick={handleLogoff}
+                        type="button"
                     />
                     <BotaoPadrao titulo="Confirmar" tamanho="w-49" type="submit" />
                 </div>

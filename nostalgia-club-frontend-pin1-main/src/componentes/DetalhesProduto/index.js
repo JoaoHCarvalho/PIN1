@@ -12,6 +12,25 @@ const DetalhesProduto = () => {
     const [comentarios, setComentarios] = useState([]);
     const [comentariosCarregados, setComentariosCarregados] = useState(false);
 
+    // Função para carregar comentários
+    const recarregarComentarios = () => {
+        setComentariosCarregados(false);
+        fetch(`http://localhost:8080/comentario/all/${codigo}`)
+            .then(response => response.json())
+            .then(data => {
+                const comentariosComAutor = data.map(comentario => ({
+                    ...comentario,
+                    autor: comentario.cliente ? comentario.cliente.nome : "Anônimo" // Usa o nome do cliente, ou "Anônimo" se não houver cliente
+                }));
+                setComentarios(comentariosComAutor);
+                setComentariosCarregados(true);
+            })
+            .catch(error => {
+                console.error("Erro ao buscar comentários:", error);
+                setComentariosCarregados(true);
+            });
+    };
+
     useEffect(() => {
         fetch(`http://localhost:8080/produto/${codigo}`)
             .then(response => response.json())
@@ -27,20 +46,9 @@ const DetalhesProduto = () => {
             })
             .catch(error => console.error("Erro ao buscar detalhes do produto:", error));
 
-        fetch(`http://localhost:8080/comentario/all/${codigo}`)
-            .then(response => response.json())
-            .then(data => {
-                const comentariosComAutor = data.map(comentario => ({
-                    ...comentario,
-                    autor: comentario.cliente ? comentario.cliente.nome : "Anônimo" // Usa o nome do cliente, ou "Anônimo" se não houver cliente
-                }));
-                setComentarios(comentariosComAutor);
-                setComentariosCarregados(true);
-            })
-            .catch(error => {
-                console.error("Erro ao buscar comentários:", error);
-                setComentariosCarregados(true);
-            });
+        // Chama a função para carregar comentários ao montar o componente
+        recarregarComentarios();
+// eslint-disable-next-line
     }, [codigo]);
 
     useEffect(() => {
@@ -65,11 +73,16 @@ const DetalhesProduto = () => {
 
     return (
         <section className="detalhes-produto">
-            {infoProduto && <ConsultaProduto infoProduto={infoProduto} codigoProduto={codigo}/>}
+            {infoProduto && <ConsultaProduto infoProduto={infoProduto} codigoProduto={codigo} />}
             <ProdutosRelacionados produtosRelacionados={produtosRelacionados} />
-            <Comentarios comentarios={comentarios} comentariosCarregados={comentariosCarregados} />
+            <Comentarios
+                codigo={codigo}
+                comentarios={comentarios}
+                comentariosCarregados={comentariosCarregados}
+                recarregarComentarios={recarregarComentarios} // Passa a função como prop
+            />
         </section>
     );
-}
+};
 
 export default DetalhesProduto;

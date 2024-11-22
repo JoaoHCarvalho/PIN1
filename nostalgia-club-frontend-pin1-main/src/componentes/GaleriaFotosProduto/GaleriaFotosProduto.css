@@ -2,7 +2,7 @@
     width: 50%;
     height: 25rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     box-shadow: 13px 5px 40px 9px rgba(24, 24, 24, 0.29);
     background-color: var(--secundaria, #D4E8E1);
 }

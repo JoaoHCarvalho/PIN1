@@ -20,6 +20,9 @@
     width: 15%;
 }
 
-.menu .box-pesquisa{
-    width: 35%;
+.menu .menu-nav-pesquisa{
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: start;
 }

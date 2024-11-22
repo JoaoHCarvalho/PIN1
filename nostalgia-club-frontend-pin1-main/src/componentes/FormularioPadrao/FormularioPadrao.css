@@ -13,6 +13,10 @@
     text-transform: uppercase;
 }
 
+.formulario-padrao-titulo {
+    display: flex;
+}
+
 .agrupador {
     width: 100%;
     display: flex;

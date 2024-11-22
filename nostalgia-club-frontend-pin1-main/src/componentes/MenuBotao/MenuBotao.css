@@ -14,6 +14,14 @@
     height: 100%;
 }
 
+.menu-botao .link-botao:hover {
+    color: rgba(87, 112, 104, 0.8);
+}
+
+.menu-botao .disabled{
+    opacity: 60%;
+}
+
 .menu-botao img {
     max-width: 100%;
     max-height: 100%;

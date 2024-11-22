@@ -87,13 +87,14 @@ const AppRoutes = () => {
 
         <Router>
             <Routes>
+                <Route index element={<FormularioLogin />} />
+                <Route path='/cadastro' element={<FormularioCadastro />} />
+
                 <Route path='/' element={<PaginaBase />}>
-                    <Route index element={<FormularioLogin />} />
-                    <Route path='/cadastro' element={<FormularioCadastro />} />
                     <Route path='/home' element={<HomePage />} />
                     <Route path='/meucarrinho' element={<MeuCarrinho />} />
                     <Route path='/midias' element={<VitrineCategoria titulo="Mídias" subtitulo="Encontre aqui as obras que marcaram a sua vida" categoriasProduto={produtosMidias} />} />
-                    <Route path='/dispositivos' element={<VitrineCategoria titulo="Dispositivos" subtitulo="Crie experiências incríveis com os aparelhos da sua vida" categoriasProduto={produtosDispositivos} />} />
+                    <Route path='/dispositivos' element={<VitrineCategoria titulo="Dispositivos" subtitulo="Crie experiências incríveis com os aparelhos da sua história" categoriasProduto={produtosDispositivos} />} />
                     <Route path='/detalhes-produto/:codigo' element={<DetalhesProduto />} />
                     <Route path='/detalhes-pedido' element={<DetalhesPedido />} />
 
