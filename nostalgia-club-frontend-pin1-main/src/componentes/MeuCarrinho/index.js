@@ -79,11 +79,38 @@ const MeuCarrinho = () => {
         fetchCarrinho();
     }, [frete]);
 
+    // Função para limpar o carrinho
+    const limparCarrinho = async () => {
+        try {
+            const response = await fetch('http://localhost:8080/carrinho/delete', {
+                method: 'DELETE',
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                if (result === 1) {
+                    // Atualizar a interface
+                    setItens([]);
+                    setSubtotal(0);
+                    setTotal(0);
+                    alert('Carrinho limpo com sucesso!');
+                } else {
+                    alert('Erro ao limpar o carrinho.');
+                }
+            } else {
+                throw new Error('Falha ao chamar o endpoint para limpar o carrinho.');
+            }
+        } catch (error) {
+            console.error('Erro ao limpar o carrinho:', error);
+            alert('Não foi possível limpar o carrinho. Tente novamente.');
+        }
+    };
+
     return (
         <section className="meu-carrinho">
             <h1>Meu Carrinho</h1>
             <GridProdutosCarrinho cabecalho={cabecalho} itens={itens} />
-            <BotaoPadrao titulo="Limpar Carrinho" tamanho="w-20"/>
+            <BotaoPadrao titulo="Limpar Carrinho" tamanho="w-20" onClick={limparCarrinho} />
             <div className="meu-carrinho__total">
                 <CardTotalPedido
                     subtotal={`R$ ${subtotal.toFixed(2)}`}
@@ -92,8 +119,6 @@ const MeuCarrinho = () => {
                 >
                     <BotaoPadrao titulo="Realizar Pagamento" link="/detalhes-pedido" />
                 </CardTotalPedido>
-
-                
             </div>
         </section>
     );
